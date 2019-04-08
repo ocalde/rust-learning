@@ -21,12 +21,19 @@ fn main() {
             Err(_) => {
                 
                 number_of_invalid_inputs += 1;
-                match number_of_invalid_inputs.cmp(&max_invalid_inputs) {
+                /*match number_of_invalid_inputs.cmp(&max_invalid_inputs) {
                     Ordering::Equal => {
                         println!("You don't want to play, get away!!");
                         break;
                     },
                     Ordering::Less | Ordering::Greater => println!("Don't be a piece of cake, enter a valid number please!"),
+                }*/
+
+                if number_of_invalid_inputs == max_invalid_inputs {
+                    println!("You don't want to play, get away!!");
+                    break;
+                } else {
+                    println!("Don't be a piece of cake, enter a valid number please!");
                 }
                 continue;
             },
